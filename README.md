@@ -1,53 +1,66 @@
-# Overview
+# IKEA Furniture Price Prediction
 
-A supervised learning model to predict the price of different types of furniture
-based on the [Ikea Webscraper](https://github.com/gamladz/ikea-webscraper)
+A machine learning model that predicts IKEA furniture prices based on product attributes scraped from IKEA’s website.
 
-## Installation
+This project explores how structured product data can be used to model pricing and identify which features most influence cost.
 
-For each file , please run the necessary imports in the opening cell and follow through 
-sequentially as each file follows on from each other. For example in Exploratory-Data-Analysis.ipynb
+Built using data from the [IKEA Webscraper](https://github.com/gamladz/ikea-webscraper).
 
+---
 
-```python
-import pandas as pd
-import json
-from ast import literal_eval
-import numpy as np
-import matplotlib.pyplot as plt 
-import pandas as pd  
-from sklearn.linear_model import LinearRegression
-import statsmodels.api as sm
-from sklearn.model_selection import train_test_split
-```
+## Why this exists
 
-## File Structure
+Pricing is driven by multiple factors such as size, material, category, and design. This project investigates how well these factors can predict price using supervised learning.
 
-The project is structured in 4 Jupyter Notebooks and CSV's which containe the data
-Please run in sequential order as variables in cells depend on previous ouputs.
+The goals were to:
 
-(1) Exploratory-Data-Analysis.ipynb
-- Data Cleaning
-- Feature Selection
-- Train Test Split
+- Build a clean end-to-end machine learning pipeline  
+- Compare different regression models  
+- Understand which features drive pricing  
+- Interpret model decisions in a meaningful way  
 
-(2) ML.ipynb
-- Randomised search CV for Linear Regression, Decision Tree Regressor, Random Forest
-- Hyper parameter Optimisation 
+---
 
-(3) Interpretations.ipynb
-- Stats Model Analysis
-- Recursive Feature Reduction
-- P-Value analysis
-- Notes on Model Analysis and interperetations for business
+## Results
 
-(4)Interface.ipynb
-- Input form to make predictions
+Tested models included:
 
+- Linear Regression  
+- Decision Tree Regressor  
+- Random Forest Regressor  
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Random Forest produced the strongest performance, capturing nonlinear relationships between features and price.
 
+The project also includes statistical analysis to interpret feature importance and model behavior.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+---
+
+## Project Structure
+
+The project is organized into four notebooks, each representing a stage in the pipeline:
+
+### 1. Exploratory-Data-Analysis.ipynb
+- Data cleaning and preprocessing  
+- Feature engineering  
+- Train/test split  
+
+### 2. ML.ipynb
+- Model training and comparison  
+- Hyperparameter optimization using RandomizedSearchCV  
+
+### 3. Interpretations.ipynb
+- Model interpretation using statistical analysis  
+- Feature importance and recursive feature elimination  
+- Analysis of model behavior  
+
+### 4. Interface.ipynb
+- Simple input interface for generating predictions  
+
+---
+
+## How to run
+
+Install dependencies:
+
+```bash
+pip install pandas numpy matplotlib scikit-learn statsmodels

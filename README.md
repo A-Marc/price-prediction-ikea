@@ -1,4 +1,4 @@
-# IKEA Furniture Price Prediction
+# IKEA Furniture Price Prediction Marc
 
 A machine learning model that predicts IKEA furniture prices based on product attributes scraped from IKEA’s website.
 
